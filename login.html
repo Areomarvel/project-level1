@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+</head>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: #f5f7fb;
+  color: #0a2540;
+}
+
+.navbar {
+  padding: clamp(16px, 3vw, 30px);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo img {
+  width: 28px;
+}
+
+.logo span {
+  font-weight: 700;
+  color: #2f6bff;
+  font-size: 18px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 5vw, 80px);
+  padding: clamp(20px, 5vw, 80px);
+  align-items: center;
+  min-height: calc(100vh - 80px);
+}
+
+.left {
+  max-width: 420px;
+  margin-bottom: 400px;
+  margin-left: 25px;
+}
+
+.left h1 {
+  font-size: clamp(32px, 5vw, 56px);
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.left h3 {
+  font-size: clamp(16px, 2vw, 20px);
+  color: #8a94a6;
+  margin-bottom: 12px;
+}
+
+.left p {
+  color: #8a94a6;
+}
+
+.left a {
+  color: #2f6bff;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.card {
+  width: 600px;
+  max-width: 520px;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  padding: 50px;
+  margin-bottom: 150px;
+}
+
+.social-group {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 12px;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.social img {
+  width: 16px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #e0e6ed;
+}
+
+.divider small {
+  color: #8a94a6;
+}
+
+.form input {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #e0e6ed;
+  margin-bottom: 15px;
+}
+
+.password-box {
+  position: relative;
+}
+
+.eye {
+  position: absolute;
+  right: 12px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.forgot {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 14px;
+  color: #2f6bff;
+  text-decoration: none;
+}
+
+.btn-primary {
+  width: 100%;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  background: #1e66f5;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .right {
+    justify-content: flex-start;
+    margin-top: -400px;
+ 
+  }
+  .left{
+    margin-left: 30px;
+  }
+  .image{
+   margin-left: -35px;
+  }
+  .card{
+    width: 99%;
+  }
+}
+
+
+@media (max-width: 600px) {
+  .social-group {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .left {
+    max-width: 100%;
+  }
+}
+</style>
+<body>
+
+
+ <nav class="navbar" style="background-color: rgb(245, 247, 250);">
+  <div class="container-fluid">
+    <a class="navbar-brand " href="#"><img class="image" style="padding-top: 50px; padding-left: 70px;" src="Plan, Save and Invest Online _ Get high returns _ Cowrywise/imgi_21_default.png" alt=""></a>
+  </div>
+</nav> 
+
+
+<div class="wrapper">
+
+
+  <section class="left">
+    <h1>Jump right in</h1>
+    <h3>Sign in to continue</h3>
+    <p>New user? <a target="_blank" href="signup.html">Create account</a></p>
+  </section>
+
+
+  <section class="right">
+    <div class="card">
+
+      <div class="social-group">
+        <button class="social">
+          <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
+          <span>Sign in with Google</span>
+        </button>
+
+        <button class="social">
+          <img src="images/imgi_4_default.png" alt=""><span>Sign in with Apple</span>
+        </button>
+      </div>
+
+      <div class="divider">
+        <span></span>
+        <small>or</small>
+        <span></span>
+      </div>
+
+
+      <form class="form">
+        <input type="email" placeholder="Email Address">
+
+        <div class="password-box">
+          <input type="password" placeholder="Password">
+          <span class="eye">👁</span>
+        </div>
+
+        <a href="#" class="forgot">Forgot password?</a>
+
+        <button type="submit" class="btn-primary">Sign in</button>
+      </form>
+
+    </div>
+    <span>Trouble signing in? Chat with us</span>
+  </section>
+
+</div>
+
+</body>
+</html>

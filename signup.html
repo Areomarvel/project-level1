@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+
+body {
+ background-color: rgb(242, 245, 250);
+ background-image: url('./images/imgi_11_auth-bg.png');
+ background-repeat: no-repeat;
+ background-position: right bottom;
+ background-size: 42%;
+}
+
+.main-container {
+  display: flex;
+  min-height: 85vh;
+  padding-left: 100px;
+  
+}
+
+
+.left {
+  flex: 1;
+  background: #ffffff;
+  padding: 80px 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 20px;
+}
+
+.right {
+  flex: 1;
+  background: #f3f6fb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  margin-bottom: auto;
+}
+
+
+.right-content {
+  max-width: 350px;
+}
+
+.right h2 {
+  font-size: 28px;
+  color: #0a2540;
+  margin-bottom: 10px;
+}
+
+.right p {
+  color: #6b7c93;
+  margin-bottom: 20px;
+}
+
+
+.link-btn {
+  display: inline-block;
+  background-color: white;
+  color: #2f6bff;
+  padding: 10px 16px;
+  border-radius: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+
+h1 {
+  font-size: 64px;
+  font-weight: 800;
+  color: #0a2540;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+
+.signin-text {
+  color: #6b7c93;
+  margin-bottom: 30px;
+}
+
+.signin-text a {
+  color: #2f6bff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+
+.google-btn {
+  width: 40%;
+  padding: 14px;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  cursor: pointer;
+  margin-bottom: 25px;
+}
+
+.google-btn img {
+  width: 18px;
+}
+
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.divider span {
+  flex: 1;
+  height: 1px;
+  background: #e0e6ed;
+}
+
+.divider p {
+  font-size: 14px;
+  color: #6b7c93;
+}
+
+
+input {
+  width: 100%;
+  padding: 16px;
+  border: 1px solid #e0e6ed;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 15px;
+}
+
+
+.continue-btn {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #1e66f5;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.continue-btn:hover {
+  background: #1554d1;
+}
+.bottom{
+    width: 140px;
+    padding-left: 110px;
+}
+.cowry{
+    
+   padding-left: 30px;
+   font-size: 12px;
+   color: rgb(106, 129, 163);
+}
+.cowries{
+   padding-top: 30px;
+}
+.need{
+   padding-left: 350px;
+   font-size: 12px;
+}
+
+
+
+@media (max-width: 900px) {
+    .need{
+        margin-left: -200px;
+    }
+
+    body{
+        background-image: none;
+    }
+  .main-container {
+    flex-direction: column;
+    
+  }
+  .google-btn{
+    width: 100%;
+  }
+
+.right{
+    margin-left: -100px;
+}
+  .left {
+    padding: 60px 30px;
+  }
+
+  h1 {
+    font-size: 48px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  .left {
+    padding: 40px 20px;
+  }
+
+  input, .continue-btn {
+    padding: 14px;
+  }
+}
+
+</style>
+  
+<body>
+ <nav class="navbar" style="background-color: rgb(245, 247, 250);">
+  <div class="container-fluid">
+    <a class="navbar-brand p-5 mx-5  my-3" href="#"><img src="Plan, Save and Invest Online _ Get high returns _ Cowrywise/imgi_21_default.png" alt=""></a>
+  </div>
+</nav> 
+   
+
+<div class="main-container">
+
+
+  <div class="left">
+
+    <h1>
+      Start your <br>
+      investment <br>
+      journey
+    </h1>
+
+    <p class="signin-text">
+      Got an account? <a target="_blank" href="login.html">Sign In</a>
+    </p>
+
+
+    <button class="google-btn">
+      <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
+      Sign up with Google
+    </button>
+
+
+    <div class="divider">
+      <span></span>
+      <p>or</p>
+      <span></span>
+    </div>
+
+    <form>
+      <input type="email" placeholder="Email Address">
+      <button class="continue-btn">Continue</button>
+    </form>
+
+    
+  </div>
+
+
+  
+
+       <div class="right">
+
+    <div class="right-content">
+      <h2>Don’t wait to start</h2>
+      <p>See how much you could have earned in the past few years</p>
+
+      <a href="#" class="link-btn">
+        ✨ See what you missed >
+      </a>
+    </div>
+     
+  </div>
+
+</div>
+  <div class="cowries"><img class="bottom" src="images/imgi_1_sec-logo.uViKvy1J.png" alt=""> <span class="cowry">Cowrywise is licensed by the SEC</span>
+    <span class="need"><a href="">Need Help?</a></span>
+
+
+
+
+
+
+  </div>
+
+</body>
+</html>
+
+</body>
+</html>
+
+
+    
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+</body>
+</html>
