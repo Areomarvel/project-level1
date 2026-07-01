@@ -162,9 +162,9 @@ input {
   cursor: pointer;
 }
 
-.continue-btn:hover {
+/* .continue-btn:hover {
   background: #1554d1;
-}
+} */
 .bottom{
     width: 140px;
     padding-left: 110px;
@@ -266,16 +266,14 @@ input {
       <span></span>
     </div>
 
-    <form>
-      <input type="email" placeholder="Email Address">
-      <button class="continue-btn">Continue</button>
-    </form>
-
-    
-  </div>
-
-
+    <div>
+       <input id="email" type="email" placeholder="Email Address">
+       <div id="message"></div>
+      <button onclick="validateEmail()" class="continue-btn">Continue</button>
+    </div>
+       
   
+  </div>
 
        <div class="right">
 
@@ -294,28 +292,9 @@ input {
   <div class="cowries"><img class="bottom" src="images/imgi_1_sec-logo.uViKvy1J.png" alt=""> <span class="cowry">Cowrywise is licensed by the SEC</span>
     <span class="need"><a href="">Need Help?</a></span>
 
-
-
-
-
-
   </div>
 
-</body>
-</html>
 
 </body>
-</html>
-
-
-    
-
-
-
-
-
-
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
-</body>
+<script src="signup.js"></script>
 </html>

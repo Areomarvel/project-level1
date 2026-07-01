@@ -1,0 +1,392 @@
+/* ==========================
+   RESET
+========================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'DM Sans',sans-serif;
+    background:#f5f8fc;
+    color:#1c2b5a;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+.navbar{
+    height:72px;
+    background:#fff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:0 40px;
+    border-bottom:1px solid #eef2f8;
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+
+.nav-logo img{
+    width:150px;
+}
+
+.navbar h3{
+    font-size:14px;
+    letter-spacing:1px;
+    color:#3056d3;
+    font-weight:700;
+}
+
+.nav-right{
+    display:flex;
+    align-items:center;
+    gap:25px;
+}
+
+.username{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-size:15px;
+    font-weight:600;
+}
+
+.dot{
+    width:10px;
+    height:10px;
+    background:#27ae60;
+    border-radius:50%;
+}
+
+.nav-right i{
+    font-size:22px;
+    cursor:pointer;
+}
+
+.profile{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.profile img{
+    width:42px;
+    height:42px;
+    border-radius:50%;
+}
+
+/* ==========================
+   LAYOUT
+========================== */
+
+.container{
+    display:grid;
+    grid-template-columns:240px 1fr;
+    min-height:calc(100vh - 72px);
+}
+
+/* ==========================
+   SIDEBAR
+========================== */
+
+.sidebar{
+    background:#fff;
+    border-right:1px solid #edf2f8;
+    padding:35px 20px;
+}
+
+.greeting{
+    margin-bottom:40px;
+}
+
+.greeting h2{
+    color:#17357b;
+    font-size:24px;
+}
+
+.greeting span{
+    display:block;
+    color:#8b98b9;
+    font-size:15px;
+    font-weight:400;
+}
+
+.sidebar ul{
+    list-style:none;
+}
+
+.sidebar li{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    padding:14px 18px;
+    margin-bottom:10px;
+    border-radius:12px;
+    cursor:pointer;
+    color:#68768d;
+    transition:.3s;
+}
+
+.sidebar li:hover{
+    background:#f3f7ff;
+    color:#2b61ff;
+}
+
+.sidebar li.active{
+    background:#2b61ff;
+    color:#fff;
+}
+
+.sidebar li i{
+    font-size:20px;
+}
+
+/* ==========================
+   DASHBOARD
+========================== */
+
+.dashboard{
+    padding:35px;
+}
+
+.tabs{
+    display:flex;
+    gap:15px;
+    margin-bottom:35px;
+}
+
+.tabs button{
+    border:none;
+    background:#eef3fb;
+    padding:10px 24px;
+    border-radius:30px;
+    font-weight:600;
+    cursor:pointer;
+}
+
+.tabs button.active{
+    background:#2b61ff;
+    color:#fff;
+}
+
+/* ==========================
+   GRID
+========================== */
+
+.dashboard-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:35px;
+}
+
+/* ==========================
+   BALANCE CARD
+========================== */
+
+.balance-card{
+    background:linear-gradient(135deg,#0d4ee4,#2d8cff);
+    color:#fff;
+    border-radius:24px;
+    padding:35px;
+    min-height:250px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    box-shadow:0 15px 35px rgba(0,84,255,.25);
+}
+
+.card-top{
+    display:flex;
+    justify-content:space-between;
+}
+
+.card-top small{
+    font-size:15px;
+}
+
+.energy{
+    background:rgba(255,255,255,.2);
+    padding:8px 14px;
+    border-radius:20px;
+}
+
+.balance{
+    font-size:48px;
+    font-weight:700;
+}
+
+.balance span{
+    font-size:24px;
+}
+
+.returns{
+    display:inline-block;
+    background:rgba(255,255,255,.18);
+    padding:8px 15px;
+    border-radius:20px;
+    width:max-content;
+}
+
+/* ==========================
+   RIGHT COLUMN
+========================== */
+
+.right-column h2{
+    color:#17357b;
+    margin-bottom:20px;
+}
+
+.cash-buttons{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.cash-buttons button{
+    border:none;
+    background:#fff;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    box-shadow:0 5px 12px rgba(0,0,0,.05);
+    transition:.3s;
+}
+
+.cash-buttons button:hover{
+    background:#2b61ff;
+    color:#fff;
+}
+
+/* ==========================
+   PROMO
+========================== */
+
+.promo-slider{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.promo-card{
+    border-radius:20px;
+    padding:25px;
+    color:#fff;
+    min-height:180px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+}
+
+.orange{
+    background:linear-gradient(135deg,#ff9c34,#ff6a00);
+}
+
+.blue{
+    background:linear-gradient(135deg,#005cff,#53b2ff);
+    font-size:26px;
+    font-weight:700;
+    justify-content:center;
+}
+
+.promo-card h3{
+    font-size:24px;
+}
+
+.promo-card p{
+    margin:15px 0;
+    line-height:1.5;
+}
+
+.promo-card button{
+    width:150px;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    background:#fff;
+    color:#ff6a00;
+    font-weight:700;
+    cursor:pointer;
+}
+
+/* ==========================
+   CHAT BUTTON
+========================== */
+
+.chat-btn{
+    position:fixed;
+    right:30px;
+    bottom:30px;
+    width:65px;
+    height:65px;
+    border:none;
+    border-radius:50%;
+    background:#005cff;
+    color:#fff;
+    font-size:28px;
+    cursor:pointer;
+    box-shadow:0 10px 25px rgba(0,92,255,.3);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:1100px){
+
+    .dashboard-grid{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:80px 1fr;
+    }
+
+    .sidebar li{
+        justify-content:center;
+    }
+
+    .sidebar li{
+        font-size:0;
+    }
+
+    .sidebar li i{
+        font-size:22px;
+        margin:0;
+    }
+
+    .greeting{
+        display:none;
+    }
+
+}
+
+@media(max-width:768px){
+
+    .navbar{
+        padding:0 20px;
+    }
+
+    .navbar h3{
+        display:none;
+    }
+
+    .dashboard{
+        padding:20px;
+    }
+
+    .balance{
+        font-size:36px;
+    }
+
+}

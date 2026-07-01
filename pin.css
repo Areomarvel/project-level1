@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'DM Sans',sans-serif;
+}
+
+body{
+    background:#eef3fb;
+}
+
+/* Background Blur */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(27,49,89,.35);
+    backdrop-filter:blur(4px);
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+/* Modal */
+
+.pin-modal{
+
+    width:600px;
+    background:white;
+    border-radius:24px;
+
+    padding:50px 70px 45px;
+
+    text-align:center;
+
+    box-shadow:
+    0 15px 40px rgba(13,38,76,.08);
+}
+
+/* Lock */
+
+.icon{
+
+    margin-bottom:18px;
+}
+
+.icon svg{
+
+    width:60px;
+    height:60px;
+
+    stroke:#032b88;
+    stroke-width:1.5;
+
+    fill:none;
+
+}
+
+/* Title */
+
+h1{
+
+    font-size:28px;
+    font-weight:700;
+
+    color:#082c7d;
+
+    margin-bottom:15px;
+}
+
+/* Description */
+
+p{
+
+    font-size:17px;
+
+    color:#7b8aac;
+
+    line-height:1.6;
+
+    margin-bottom:35px;
+}
+
+/* Labels */
+
+label{
+
+    display:block;
+
+    color:#15397f;
+
+    font-size:17px;
+
+    font-weight:500;
+
+    margin-bottom:18px;
+}
+
+/* Pin Boxes */
+
+.pin-inputs{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    margin-bottom:26px;
+}
+
+.pin-inputs input{
+
+    width:54px;
+    height:54px;
+
+    border:1px solid #E6EBF3;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:28px;
+
+    outline:none;
+
+    transition:.25s;
+}
+
+.pin-inputs input:focus{
+
+    border-color:#0057ff;
+
+    box-shadow:0 0 0 3px rgba(0,87,255,.08);
+}
+
+/* Blue Dot */
+
+.pin-inputs input[type=password]{
+
+    -webkit-text-security:disc;
+}
+
+/* Button */
+
+button{
+
+    margin-top:20px;
+
+    width:140px;
+
+    height:46px;
+
+    border:none;
+
+    border-radius:6px;
+
+    background:linear-gradient(180deg,#1877ff,#0057ff);
+
+    color:white;
+
+    font-size:16px;
+
+    font-weight:700;
+
+    cursor:pointer;
+
+    box-shadow:0 5px 15px rgba(0,87,255,.25);
+}
+
+button:hover{
+
+    transform:translateY(-1px);
+}

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cowrywise Dashboard Clone</title>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <!-- Remix Icons -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+        rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-logo">
+        <img src="images/logo.svg" alt="">
+    </div>
+
+    <h3>ACCOUNT OVERVIEW</h3>
+
+    <div class="nav-right">
+
+        <span class="username">
+            <span class="dot"></span>
+            Seed
+        </span>
+
+        <i class="ri-notification-3-line"></i>
+
+        <div class="profile">
+
+            <img src="images/avatar.png" alt="">
+
+            <i class="ri-arrow-down-s-line"></i>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- ================= BODY ================= -->
+
+<div class="container">
+
+    <!-- Sidebar -->
+
+    <aside class="sidebar">
+
+        <div class="greeting">
+
+            <h2>
+                <span>Howdy</span>
+                Adeola
+            </h2>
+
+        </div>
+
+        <ul>
+
+            <li class="active">
+                <i class="ri-home-5-fill"></i>
+                Home
+            </li>
+
+            <li>
+                <i class="ri-safe-2-line"></i>
+                Save
+            </li>
+
+            <li>
+                <i class="ri-shopping-bag-line"></i>
+                Invest
+            </li>
+
+            <li>
+                <i class="ri-planet-line"></i>
+                Nest
+            </li>
+
+            <li>
+                <i class="ri-bank-card-line"></i>
+                Payment
+            </li>
+
+            <li>
+                <i class="ri-wallet-3-line"></i>
+                Stash
+            </li>
+
+            <li>
+                <i class="ri-book-open-line"></i>
+                Learn
+            </li>
+
+            <li>
+                <i class="ri-share-forward-line"></i>
+                Referral
+            </li>
+
+        </ul>
+
+    </aside>
+
+
+
+    <!-- ================= DASHBOARD ================= -->
+
+    <main class="dashboard">
+
+        <!-- Tabs -->
+
+        <div class="tabs">
+
+            <button class="active">
+                Home
+            </button>
+
+            <button>
+                Portfolio
+            </button>
+
+        </div>
+
+
+
+        <section class="dashboard-grid">
+
+            <!-- Left -->
+
+            <div class="left-column">
+
+                <div class="balance-card">
+
+                    <div class="card-top">
+
+                        <div>
+
+                            <small>
+                                Naira Balance
+                            </small>
+
+                        </div>
+
+                        <div class="energy">
+
+                            ⚡ 1
+
+                        </div>
+
+                    </div>
+
+                    <div class="balance">
+
+                        ₦ 1,000<span>.00</span>
+
+                    </div>
+
+                    <div class="returns">
+
+                        ✦ ₦0 return in Jun
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Right -->
+
+            <div class="right-column">
+
+                <h2>
+                    Add cash
+                </h2>
+
+                <div class="cash-buttons">
+
+                    <button>₦ 20K</button>
+
+                    <button>₦ 50K</button>
+
+                    <button>₦ 100K</button>
+
+                    <button>$ 100</button>
+
+                    <button>$ 200</button>
+
+                    <button>+</button>
+
+                </div>
+
+
+
+                <div class="promo-slider">
+
+                    <div class="promo-card orange">
+
+                        <div class="promo-text">
+
+                            <h3>It's Salary Week!</h3>
+
+                            <p>
+                                Top up your Savings,
+                                Stocks and Mutual Funds.
+                            </p>
+
+                            <button>
+                                TOP UP HERE
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <div class="promo-card blue">
+
+                        Become a
+                        <br>
+                        Super Saver
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+
+<!-- Floating Chat -->
+
+<button class="chat-btn">
+
+    <i class="ri-customer-service-2-fill"></i>
+
+</button>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>
