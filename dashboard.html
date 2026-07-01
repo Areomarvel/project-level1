@@ -1,259 +1,809 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cowrywise Dashboard Clone</title>
-
-    <!-- Google Font -->
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
-
-    <!-- Remix Icons -->
-    <link
-        href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-        rel="stylesheet"
-    />
-
-    <link rel="stylesheet" href="dashboard.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cowrywise Dashboard Overview</title>
+  <link rel="stylesheet" href="dashboard.css">
 </head>
 <body>
-
-<!-- ================= NAVBAR ================= -->
-
-<header class="navbar">
-
-    <div class="nav-logo">
-        <img src="images/logo.svg" alt="">
-    </div>
-
-    <h3>ACCOUNT OVERVIEW</h3>
-
-    <div class="nav-right">
-
-        <span class="username">
-            <span class="dot"></span>
-            Seed
-        </span>
-
-        <i class="ri-notification-3-line"></i>
-
-        <div class="profile">
-
-            <img src="images/avatar.png" alt="">
-
-            <i class="ri-arrow-down-s-line"></i>
-
-        </div>
-
-    </div>
-
-</header>
-
-<!-- ================= BODY ================= -->
-
-<div class="container">
-
-    <!-- Sidebar -->
-
-    <aside class="sidebar">
-
-        <div class="greeting">
-
-            <h2>
-                <span>Howdy</span>
-                Adeola
-            </h2>
-
-        </div>
-
-        <ul>
-
-            <li class="active">
-                <i class="ri-home-5-fill"></i>
-                Home
-            </li>
-
-            <li>
-                <i class="ri-safe-2-line"></i>
-                Save
-            </li>
-
-            <li>
-                <i class="ri-shopping-bag-line"></i>
-                Invest
-            </li>
-
-            <li>
-                <i class="ri-planet-line"></i>
-                Nest
-            </li>
-
-            <li>
-                <i class="ri-bank-card-line"></i>
-                Payment
-            </li>
-
-            <li>
-                <i class="ri-wallet-3-line"></i>
-                Stash
-            </li>
-
-            <li>
-                <i class="ri-book-open-line"></i>
-                Learn
-            </li>
-
-            <li>
-                <i class="ri-share-forward-line"></i>
-                Referral
-            </li>
-
-        </ul>
-
+  
+  <div class="app-container">
+    
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebarMenu">
+      <div class="logo-container">
+        <!-- Cowrywise Logo SVG -->
+        <svg class="logo-icon" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8z"/>
+          <path d="M12 6c-3.31 0-6 2.69-6 6s2.69 6 6 6 6-2.69 6-6-2.69-6-6-6zm0 10c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4z"/>
+          <circle cx="12" cy="12" r="2"/>
+        </svg>
+        <span class="logo-text">cowrywise</span>
+      </div>
+      
+      <div class="user-greeting">
+        <span>Howdy</span>
+        <h3 id="sidebarGreetingName">Adeola</h3>
+      </div>
+      
+      <nav class="nav-links">
+        <li class="nav-item active" data-tab="home">
+          <a href="#home">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            Home
+          </a>
+        </li>
+        <li class="nav-item" data-tab="save">
+          <a href="#save">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="12" y2="12"/></svg>
+            Save
+          </a>
+        </li>
+        <li class="nav-item" data-tab="invest">
+          <a href="#invest">
+            <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            Invest
+          </a>
+        </li>
+        <li class="nav-item" data-tab="nest">
+          <a href="#nest">
+            <svg viewBox="0 0 24 24"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 3"/></svg>
+            Nest
+          </a>
+        </li>
+        <li class="nav-item" data-tab="payment">
+          <a href="#payment">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+            Payment
+          </a>
+        </li>
+        <li class="nav-item" data-tab="stash">
+          <a href="#stash">
+            <svg viewBox="0 0 24 24"><path d="M20 12V8H4v4M2 4h20v16H2z"/></svg>
+            Stash
+          </a>
+        </li>
+        <li class="nav-item" data-tab="learn">
+          <a href="#learn">
+            <svg viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            Learn
+          </a>
+        </li>
+        <li class="nav-item" data-tab="referral">
+          <a href="#referral">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            Referral
+          </a>
+        </li>
+      </nav>
     </aside>
-
-
-
-    <!-- ================= DASHBOARD ================= -->
-
-    <main class="dashboard">
-
-        <!-- Tabs -->
-
-        <div class="tabs">
-
-            <button class="active">
-                Home
-            </button>
-
-            <button>
-                Portfolio
-            </button>
-
+    
+    <!-- Main Content Panel -->
+    <main class="main-panel">
+      
+      <!-- Top Navigation Header -->
+      <header class="top-bar">
+        <div style="display:flex; align-items:center; gap:16px;">
+          <button class="menu-toggle-btn" id="menuToggleBtn">
+            <svg viewBox="0 0 24 24"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="page-title">Account Overview</div>
         </div>
-
-
-
-        <section class="dashboard-grid">
-
-            <!-- Left -->
-
-            <div class="left-column">
-
-                <div class="balance-card">
-
-                    <div class="card-top">
-
-                        <div>
-
-                            <small>
-                                Naira Balance
-                            </small>
-
-                        </div>
-
-                        <div class="energy">
-
-                            ⚡ 1
-
-                        </div>
-
-                    </div>
-
-                    <div class="balance">
-
-                        ₦ 1,000<span>.00</span>
-
-                    </div>
-
-                    <div class="returns">
-
-                        ✦ ₦0 return in Jun
-
-                    </div>
-
+        <div class="top-bar-actions">
+          <div class="seed-badge">
+            <!-- Seed Icon -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2C8 6 4 10 4 14c0 4.4 3.6 8 8 8s8-3.6 8-8c0-4-4-8-8-8zm0 18c-3.3 0-6-2.7-6-6 0-3 3-6.5 6-9.5 3 3 6 6.5 6 9.5 0 3.3-2.7 6-6 6z"/>
+            </svg>
+            <span>Seed</span>
+          </div>
+          
+          <button class="icon-btn" aria-label="Notifications">
+            <svg viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            <div class="notification-badge"></div>
+          </button>
+          
+          <div class="profile-avatar" id="profileBtn" title="Adeola's Profile">
+            <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </div>
+        </div>
+      </header>
+      
+      <!-- VIEW: HOME -->
+      <section class="dashboard-view active" id="view-home">
+        <div class="sub-nav">
+          <button class="sub-nav-btn active" id="subHomeBtn">Home</button>
+          <button class="sub-nav-btn" id="subPortfolioBtn">Portfolio</button>
+        </div>
+        
+        <!-- Nested Tab 1: Home Dashboard Grid -->
+        <div id="nested-home-tab">
+          <div class="home-grid">
+            
+            <!-- Balance Card -->
+            <div class="balance-card" id="mainBalanceCard">
+              <div>
+                <div class="balance-header">
+                  <span>Naira Balance</span>
+                  <!-- Dropdown icon -->
+                  <svg class="dropdown-arrow" viewBox="0 0 24 24">
+                    <path d="M6 9l6 6 6-6"/>
+                  </svg>
+                  
+                  <button class="visibility-toggle" id="toggleBalanceBtn" aria-label="Toggle Balance Visibility">
+                    <!-- Eye Icon -->
+                    <svg viewBox="0 0 24 24">
+                      <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                      <circle cx="12" cy="12" r="3"/>
+                    </svg>
+                  </button>
                 </div>
-
+                
+                <div class="streak-indicator">
+                  <!-- Lightning bolt -->
+                  <svg viewBox="0 0 24 24">
+                    <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+                  </svg>
+                  <span>1</span>
+                </div>
+                
+                <div class="balance-amount-wrapper">
+                  <span class="currency-symbol">₦</span>
+                  <span class="balance-amount" id="valNairaBalance">1,000</span>
+                  <span class="balance-cents">.00</span>
+                  <span class="balance-masked">₦ •,•••.••</span>
+                </div>
+              </div>
+              
+              <div class="balance-footer">
+                <div class="return-badge">
+                  <span>✨ No return in Jun</span>
+                  <!-- Small up chevron -->
+                  <svg viewBox="0 0 24 24">
+                    <polyline points="18 15 12 9 6 15"/>
+                  </svg>
+                </div>
+              </div>
             </div>
-
-
-
-            <!-- Right -->
-
-            <div class="right-column">
-
-                <h2>
-                    Add cash
-                </h2>
-
-                <div class="cash-buttons">
-
-                    <button>₦ 20K</button>
-
-                    <button>₦ 50K</button>
-
-                    <button>₦ 100K</button>
-
-                    <button>$ 100</button>
-
-                    <button>$ 200</button>
-
-                    <button>+</button>
-
-                </div>
-
-
-
-                <div class="promo-slider">
-
-                    <div class="promo-card orange">
-
-                        <div class="promo-text">
-
-                            <h3>It's Salary Week!</h3>
-
-                            <p>
-                                Top up your Savings,
-                                Stocks and Mutual Funds.
-                            </p>
-
-                            <button>
-                                TOP UP HERE
-                            </button>
-
-                        </div>
-
-                    </div>
-
-                    <div class="promo-card blue">
-
-                        Become a
-                        <br>
-                        Super Saver
-
-                    </div>
-
-                </div>
-
+            
+            <!-- Add Cash Card -->
+            <div class="add-cash-container">
+              <h3 class="add-cash-title">Add cash</h3>
+              <div class="add-cash-grid">
+                <button class="preset-btn" data-amt="20000">₦ 20K</button>
+                <button class="preset-btn" data-amt="50000">₦ 50K</button>
+                <button class="preset-btn" data-amt="100000">₦ 100K</button>
+                <button class="preset-btn" data-amt="15000" data-cur="USD">$ 100</button> <!-- USD converted -->
+                <button class="preset-btn" data-amt="30000" data-cur="USD">$ 200</button>
+                <button class="preset-btn custom-btn" id="openAddCashBtn">+</button>
+              </div>
             </div>
-
-        </section>
-
+            
+            <!-- Banners Section -->
+            <div class="banners-section">
+              <div class="promo-card orange-theme">
+                <div class="promo-content">
+                  <div class="promo-text">It's Salary Week! Top up your Savings, Stocks and Mutual Funds investments now.</div>
+                  <button class="promo-btn" id="salaryTopUpBtn">Top up here</button>
+                </div>
+                <div class="promo-visual">
+                  <div class="columns-graphic">
+                    <div class="graphic-col col-1"></div>
+                    <div class="graphic-col col-2"></div>
+                    <div class="graphic-col col-3"></div>
+                  </div>
+                  <div class="circle-coin">₦</div>
+                </div>
+              </div>
+              
+              <div class="promo-card blue-theme">
+                <div class="promo-content">
+                  <div class="promo-text">Grow your Wealth! Earn up to 15% interest per annum on your savings.</div>
+                  <button class="promo-btn" id="growWealthBtn">Start saving</button>
+                </div>
+                <div class="promo-visual">
+                  <div class="graphic-circle">
+                    <div class="graphic-circle-inner">%</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <!-- Nested Tab 2: Portfolio Details -->
+        <div id="nested-portfolio-tab" style="display: none;">
+          <div class="portfolio-details">
+            <h3 class="outfit-font">Portfolio Distribution</h3>
+            <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">A visual representation of your total assets holdings.</p>
+            
+            <div class="portfolio-chart-container">
+              <div class="chart-visual">
+                <div class="conic-chart" id="portfolioConicChart">
+                  <div class="chart-center">
+                    <span>Net Worth</span>
+                    <h4 id="valPortfolioNetWorth">₦ 1,000.00</h4>
+                  </div>
+                </div>
+              </div>
+              
+              <div class="chart-legend">
+                <div class="legend-item">
+                  <div class="legend-label-wrapper">
+                    <div class="legend-color saving"></div>
+                    <span class="legend-label">Savings <span class="legend-percent" id="pctSavings">(0%)</span></span>
+                  </div>
+                  <span class="legend-value" id="valPortfolioSavings">₦ 0.00</span>
+                </div>
+                
+                <div class="legend-item">
+                  <div class="legend-label-wrapper">
+                    <div class="legend-color investing"></div>
+                    <span class="legend-label">Investments <span class="legend-percent" id="pctInvestments">(0%)</span></span>
+                  </div>
+                  <span class="legend-value" id="valPortfolioInvestments">₦ 0.00</span>
+                </div>
+                
+                <div class="legend-item">
+                  <div class="legend-label-wrapper">
+                    <div class="legend-color stash"></div>
+                    <span class="legend-label">Stash <span class="legend-percent" id="pctStash">(100%)</span></span>
+                  </div>
+                  <span class="legend-value" id="valPortfolioStash">₦ 1,000.00</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- VIEW: SAVE -->
+      <section class="dashboard-view" id="view-save">
+        <div class="view-header">
+          <div>
+            <h2>Savings Center</h2>
+            <p>Automate your savings and reach your goals faster.</p>
+          </div>
+          <button class="action-btn" id="openCreatePlanBtn">
+            <svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Create savings plan
+          </button>
+        </div>
+        
+        <div class="save-stats-grid">
+          <div class="stat-card">
+            <span>Total Savings</span>
+            <h3 id="valTotalSavings">₦ 0.00</h3>
+          </div>
+          <div class="stat-card">
+            <span>Active Plans</span>
+            <h3 id="valActivePlansCount">2</h3>
+          </div>
+          <div class="stat-card">
+            <span>Avg. Interest Rate</span>
+            <h3>11.5% p.a.</h3>
+          </div>
+        </div>
+        
+        <h3 class="outfit-font" style="margin-bottom: 16px;">Active Savings Plans</h3>
+        <div class="plans-grid" id="savingsPlansGrid">
+          <!-- Plans rendered dynamically in JS. Default templates here for structure. -->
+        </div>
+      </section>
+      
+      <!-- VIEW: INVEST -->
+      <section class="dashboard-view" id="view-invest">
+        <div class="view-header">
+          <div>
+            <h2>Investments</h2>
+            <p>Access high-yielding mutual funds and diversify your portfolio.</p>
+          </div>
+        </div>
+        
+        <div class="invest-grid">
+          <div>
+            <h3 class="outfit-font" style="margin-bottom: 16px;">Available Mutual Funds</h3>
+            <div class="mutual-funds-section" id="mutualFundsContainer">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+          
+          <div>
+            <!-- Simulator card -->
+            <div class="simulator-card">
+              <h3 class="simulator-title">See your money grow</h3>
+              
+              <div class="form-group">
+                <label for="simAmount">Starting Investment</label>
+                <input type="number" id="simAmount" class="form-control" value="10000" min="1000">
+              </div>
+              
+              <div class="form-group">
+                <label>Risk Level & Fund Type</label>
+                <div class="risk-toggle">
+                  <button class="risk-btn active" data-risk="low">Conservative</button>
+                  <button class="risk-btn" data-risk="med">Moderate</button>
+                  <button class="risk-btn" data-risk="high">Aggressive</button>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="simYears">Investment Horizon</label>
+                <select id="simYears" class="form-control">
+                  <option value="1">1 Year</option>
+                  <option value="3" selected>3 Years</option>
+                  <option value="5">5 Years</option>
+                </select>
+              </div>
+              
+              <div class="projection-result">
+                <span>Estimated Value</span>
+                <div class="projection-amount" id="valProjection">₦ 12,597.00</div>
+                <div class="chart-svg-container">
+                  <svg id="sparklineSvg" width="100%" height="100%" viewBox="0 0 300 100" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="sparkline-gradient" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stop-color="var(--primary)" stop-opacity="0.3"></stop>
+                        <stop offset="100%" stop-color="var(--primary)" stop-opacity="0"></stop>
+                      </linearGradient>
+                    </defs>
+                    <path class="sparkline-area" d=""></path>
+                    <path class="sparkline-path" d=""></path>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- VIEW: NEST -->
+      <section class="dashboard-view" id="view-nest">
+        <div class="view-header">
+          <div>
+            <h2>Nest (Group Savings)</h2>
+            <p>Save together with family, partners, or friends for shared targets.</p>
+          </div>
+        </div>
+        
+        <div class="nest-grid">
+          <div class="nest-main-card">
+            <div class="couple-image-container">
+              <svg class="couple-avatar" viewBox="0 0 24 24" style="background:#e0f2fe; fill:var(--primary); padding:10px;"><circle cx="12" cy="8" r="4"/><path d="M5 20v-2a7 7 0 0 1 14 0v2"/></svg>
+              <div class="couple-avatar partner">+</div>
+            </div>
+            
+            <h3 class="outfit-font" style="text-align:center; margin-bottom:8px;">Save with a Partner</h3>
+            <p style="text-align:center; color:var(--text-muted); font-size:14px; margin-bottom:24px;">Combine forces with your spouse or partner to hit long-term goals together, with interest shared.</p>
+            
+            <div class="invite-partner-box" id="nestInviteBox">
+              <p>Enter your partner's email address to send an invite.</p>
+              <div style="display:flex; gap:10px;">
+                <input type="email" placeholder="partner@email.com" class="form-control" id="nestPartnerEmail" style="background:var(--white);">
+                <button class="action-btn" id="nestInviteBtn">Invite</button>
+              </div>
+            </div>
+            
+            <div class="invite-partner-box" id="nestLinkedBox" style="display:none; background:var(--accent-green-light); border-color:rgba(20,160,80,0.3);">
+              <p style="color:var(--accent-green); font-weight:600; margin-bottom:0;">Linked with <span id="partnerEmailSpan">partner@email.com</span>! Joint Savings Active.</p>
+            </div>
+          </div>
+          
+          <div>
+            <h3 class="outfit-font" style="margin-bottom:16px;">Active Group Challenges</h3>
+            <div class="plan-card" style="min-height: auto;">
+              <div class="plan-card-header">
+                <span class="plan-name">Dream Home Fund 2027</span>
+                <span class="plan-badge">Joint</span>
+              </div>
+              <div class="plan-progress-container">
+                <div class="progress-bar-bg"><div class="progress-bar-fill" style="width: 45%;"></div></div>
+                <div class="progress-info">
+                  <span>Saved: ₦ 4.5M</span>
+                  <span>Target: ₦ 10M</span>
+                </div>
+              </div>
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-top:12px;">
+                <span style="font-size:12px; color:var(--text-muted);">Contributions: <strong>You (60%)</strong> · Partner (40%)</span>
+                <button class="action-btn secondary-btn" style="padding:6px 14px; font-size:12px;" onclick="alert('Joint top up is funded via adding cash')">Top Up</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      <!-- VIEW: PAYMENT -->
+      <section class="dashboard-view" id="view-payment">
+        <div class="view-header">
+          <div>
+            <h2>Payments & Transfers</h2>
+            <p>Perform bills payment, buy airtime, or transfer cash to bank accounts.</p>
+          </div>
+        </div>
+        
+        <div class="payment-grid">
+          <div class="payment-options-list">
+            <div class="payment-option-card active" data-payform="bank-transfer">
+              <div class="payment-option-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="9" x2="15" y2="15"/><line x1="15" y1="9" x2="9" y2="15"/></svg>
+              </div>
+              <div>
+                <div class="payment-option-title">Bank Transfer</div>
+                <div class="payment-option-desc">Send cash to a Nigerian Bank account</div>
+              </div>
+            </div>
+            
+            <div class="payment-option-card" data-payform="bills">
+              <div class="payment-option-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+              </div>
+              <div>
+                <div class="payment-option-title">Pay Utility Bills</div>
+                <div class="payment-option-desc">Electricity, Cable TV, Internet subscriptions</div>
+              </div>
+            </div>
+            
+            <div class="payment-option-card" data-payform="airtime">
+              <div class="payment-option-icon">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 17h14v2H5zm0-4h14v2H5zm0-4h14v2H5zm0-4h14v2H5z"/></svg>
+              </div>
+              <div>
+                <div class="payment-option-title">Airtime & Data</div>
+                <div class="payment-option-desc">Instant top-up for all networks</div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="payment-form-panel">
+            
+            <!-- Bank Transfer Form -->
+            <form class="payment-form active" id="form-bank-transfer" onsubmit="return false;">
+              <h3 class="outfit-font" style="margin-bottom: 20px;">Bank Transfer Details</h3>
+              <div class="form-group">
+                <label for="btBank">Select Bank</label>
+                <select id="btBank" class="form-control">
+                  <option>Access Bank</option>
+                  <option>Guaranty Trust Bank (GTB)</option>
+                  <option>Zenith Bank</option>
+                  <option>United Bank for Africa (UBA)</option>
+                  <option>Kuda Microfinance Bank</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="btAccountNo">Account Number</label>
+                <input type="text" id="btAccountNo" class="form-control" placeholder="10-digit number" maxlength="10">
+              </div>
+              <div class="form-group">
+                <label for="btAmount">Amount (₦)</label>
+                <input type="number" id="btAmount" class="form-control" placeholder="Minimum ₦100" min="100">
+              </div>
+              <button class="action-btn" style="width: 100%; justify-content: center;" id="submitBankTransferBtn">Transfer Funds</button>
+            </form>
+            
+            <!-- Pay Bills Form -->
+            <form class="payment-form" id="form-bills" onsubmit="return false;">
+              <h3 class="outfit-font" style="margin-bottom: 20px;">Pay Utility Bills</h3>
+              <div class="form-group">
+                <label for="billCategory">Utility Biller</label>
+                <select id="billCategory" class="form-control">
+                  <option>DSTV / GoTV Subscription</option>
+                  <option>Ikeja Electricity Distribution (IKEDC)</option>
+                  <option>Smile Internet Bundle</option>
+                  <option>Spectranet Data Bundle</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="billCustomerNo">Customer/SmartCard ID</label>
+                <input type="text" id="billCustomerNo" class="form-control" placeholder="e.g. 1045938827">
+              </div>
+              <div class="form-group">
+                <label for="billAmount">Amount (₦)</label>
+                <input type="number" id="billAmount" class="form-control" placeholder="Enter payable amount" min="50">
+              </div>
+              <button class="action-btn" style="width: 100%; justify-content: center;" id="submitBillPayBtn">Pay Bill</button>
+            </form>
+            
+            <!-- Buy Airtime Form -->
+            <form class="payment-form" id="form-airtime" onsubmit="return false;">
+              <h3 class="outfit-font" style="margin-bottom: 20px;">Buy Airtime & Data</h3>
+              <div class="form-group">
+                <label for="airNetwork">Network Provider</label>
+                <select id="airNetwork" class="form-control">
+                  <option>MTN Nigeria</option>
+                  <option>Airtel Africa</option>
+                  <option>Glo (Globacom)</option>
+                  <option>9mobile</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="airPhone">Phone Number</label>
+                <input type="tel" id="airPhone" class="form-control" placeholder="e.g. 08030000000">
+              </div>
+              <div class="form-group">
+                <label for="airAmount">Recharge Amount (₦)</label>
+                <input type="number" id="airAmount" class="form-control" placeholder="Enter recharge value" min="50">
+              </div>
+              <button class="action-btn" style="width: 100%; justify-content: center;" id="submitAirtimeBtn">Purchase Airtime</button>
+            </form>
+            
+            <!-- Success Screen (Hidden by default) -->
+            <div id="paymentSuccessScreen" style="display: none;">
+              <div class="success-screen">
+                <div class="checkmark-circle">
+                  <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+                </div>
+                <h3 class="outfit-font">Transaction Successful!</h3>
+                <p style="color:var(--text-muted); font-size:14px; margin-top:8px; margin-bottom:24px;" id="successMsgText">Your payment of ₦5,000.00 has been processed successfully.</p>
+                <button class="action-btn secondary-btn" id="paymentResetBtn">Done</button>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </section>
+      
+      <!-- VIEW: STASH -->
+      <section class="dashboard-view" id="view-stash">
+        <div class="view-header">
+          <div>
+            <h2>Cash Stash</h2>
+            <p>Your stash holds unallocated cash you're ready to save, invest, or withdraw.</p>
+          </div>
+        </div>
+        
+        <div class="stash-balance-box">
+          <span>Stash Balance</span>
+          <h3 id="valStashBalance">₦ 1,000.00</h3>
+        </div>
+        
+        <div class="stash-actions-grid">
+          <div class="stash-action-card" id="stashMoveWalletBtn">
+            <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M22 10H2"/></svg>
+            <h4 class="outfit-font">Move to Wallet</h4>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:6px;">Move cash from Stash into your spendable Naira balance.</p>
+          </div>
+          
+          <div class="stash-action-card" id="stashFundPlanBtn">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+            <h4 class="outfit-font">Fund a Saving Plan</h4>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:6px;">Directly fund one of your active savings goals from your stash.</p>
+          </div>
+          
+          <div class="stash-action-card" id="stashWithdrawBtn">
+            <svg viewBox="0 0 24 24"><polyline points="8 17 12 21 16 17"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.88 18.09A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.29"/></svg>
+            <h4 class="outfit-font">Withdraw to Bank</h4>
+            <p style="font-size:12px; color:var(--text-muted); margin-top:6px;">Send funds directly back to your linked external bank account.</p>
+          </div>
+        </div>
+      </section>
+      
+      <!-- VIEW: LEARN -->
+      <section class="dashboard-view" id="view-learn">
+        <div class="view-header">
+          <div>
+            <h2>Learn Finance</h2>
+            <p>Grow your financial IQ with curated articles and quizzes.</p>
+          </div>
+        </div>
+        
+        <div class="articles-grid">
+          <div class="article-card">
+            <div class="article-img">📚</div>
+            <div class="article-content">
+              <div>
+                <span class="article-tag">Savings</span>
+                <h4 class="article-title">5 Ways to Automate Your Savings in 2026</h4>
+              </div>
+              <a href="#" class="article-link" onclick="alert('Article summary: Setting up standing orders, choosing high-yield automated apps like Cowrywise, using round-up spending, and allocating payroll split checks are the top ways to build savings without thinking.')">Read Article &rarr;</a>
+            </div>
+          </div>
+          
+          <div class="article-card">
+            <div class="article-img art-2">📈</div>
+            <div class="article-content">
+              <div>
+                <span class="article-tag">Investing</span>
+                <h4 class="article-title">Mutual Funds: A Beginner's Complete Guide</h4>
+              </div>
+              <a href="#" class="article-link" onclick="alert('Article summary: Mutual funds pool money from multiple investors to buy a diversified basket of stocks, bonds, or money market instruments managed by a professional fund manager.')">Read Article &rarr;</a>
+            </div>
+          </div>
+          
+          <div class="article-card">
+            <div class="article-img art-3">⚡</div>
+            <div class="article-content">
+              <div>
+                <span class="article-tag">Mindset</span>
+                <h4 class="article-title">The Power of Compound Interest</h4>
+              </div>
+              <a href="#" class="article-link" onclick="alert('Article summary: Albert Einstein reportedly called compound interest the eighth wonder of the world. He who understands it, earns it; he who doesn\'t, pays it. Starting early maximizes exponential growth.')">Read Article &rarr;</a>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Financial Quiz -->
+        <div class="quiz-section">
+          <h3 class="outfit-font">Weekly Financial Literacy Quiz</h3>
+          <p style="color:var(--text-muted); font-size:14px; margin-top:4px;" id="quizQuestion">Question 1: What is the primary benefit of investing in mutual funds?</p>
+          <div class="quiz-options" id="quizOptions">
+            <button class="quiz-option-btn" data-correct="false">Guaranteed 100% daily returns on all investments</button>
+            <button class="quiz-option-btn" data-correct="true">Instant diversification and professional portfolio management</button>
+            <button class="quiz-option-btn" data-correct="false">Elimination of all forms of market volatility</button>
+          </div>
+          <div id="quizFeedback" style="margin-top: 16px; font-weight: 600; display: none;"></div>
+        </div>
+      </section>
+      
+      <!-- VIEW: REFERRAL -->
+      <section class="dashboard-view" id="view-referral">
+        <div class="view-header">
+          <div>
+            <h2>Refer & Earn</h2>
+            <p>Invite your friends and earn rewards when they fund their savings plans.</p>
+          </div>
+        </div>
+        
+        <div class="referral-flex">
+          <div class="referral-left">
+            <div class="referral-card">
+              <h3 class="outfit-font">Your Referral Details</h3>
+              <p style="color:var(--text-muted); font-size:14px; margin-top:4px;">Share your unique code. You and your friends each earn ₦1,000 when they start saving.</p>
+              
+              <div class="referral-code-box">
+                <div>
+                  <span style="font-size:11px; color:var(--text-muted); text-transform:uppercase; font-weight:600; display:block; margin-bottom:4px;">Referral Code</span>
+                  <div class="referral-code" id="refCodeText">ADEOLA569K</div>
+                </div>
+                <button class="copy-btn" id="copyRefCodeBtn">Copy Code</button>
+              </div>
+            </div>
+          </div>
+          
+          <div class="referral-right">
+            <div class="stat-card" style="margin-bottom:20px;">
+              <span>Total Rewards Earned</span>
+              <h3 style="font-size:28px; color:var(--accent-green); margin-top:6px;">₦ 3,000.00</h3>
+            </div>
+            
+            <div class="stat-card">
+              <span>Friends Signed Up</span>
+              <h3 style="font-size:28px; margin-top:6px;">3 Friends</h3>
+              <p style="font-size:12px; color:var(--text-muted); margin-top:8px;">Tobi, Daniel, Amaka (all active)</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      
     </main>
-
-</div>
-
-
-
-<!-- Floating Chat -->
-
-<button class="chat-btn">
-
-    <i class="ri-customer-service-2-fill"></i>
-
-</button>
-
-<script src="dashboard.js"></script>
-
+  </div>
+  
+  <!-- MOBILE BOTTOM TAB BAR -->
+  <nav class="mobile-nav-bar" id="mobileBottomNav">
+    <a href="#home" class="mobile-nav-item active" data-tab="home">
+      <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      Home
+    </a>
+    <a href="#save" class="mobile-nav-item" data-tab="save">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="12" y2="12"/></svg>
+      Save
+    </a>
+    <a href="#invest" class="mobile-nav-item" data-tab="invest">
+      <svg viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      Invest
+    </a>
+    <a href="#payment" class="mobile-nav-item" data-tab="payment">
+      <svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+      Payment
+    </a>
+    <a href="#stash" class="mobile-nav-item" data-tab="stash">
+      <svg viewBox="0 0 24 24"><path d="M20 12V8H4v4M2 4h20v16H2z"/></svg>
+      Stash
+    </a>
+  </nav>
+  
+  <!-- FLOATING CHAT WIDGET -->
+  <div class="help-chat-widget" onclick="alert('Cowrywise Assistant: How can I help you manage your funds today?')" title="Chat with support">
+    <svg viewBox="0 0 24 24">
+      <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+    </svg>
+  </div>
+  
+  <!-- MODAL: ADD CASH -->
+  <dialog id="addCashModal" closedby="any" aria-labelledby="addCashTitle">
+    <div class="modal-header">
+      <h3 id="addCashTitle">Add Cash to Account</h3>
+      <button class="close-modal-btn" onclick="document.getElementById('addCashModal').close()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="form-group">
+      <label for="acAmount">Enter Amount (₦)</label>
+      <input type="number" id="acAmount" class="form-control" placeholder="e.g. 5000" min="500">
+    </div>
+    <div class="form-group">
+      <label for="acSource">Funding Source</label>
+      <select id="acSource" class="form-control">
+        <option value="card">Linked Debit Card (**** 4242)</option>
+        <option value="bank">Direct Bank Account Transfer</option>
+        <option value="stash">Cash Stash Wallet</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="action-btn secondary-btn" onclick="document.getElementById('addCashModal').close()">Cancel</button>
+      <button class="action-btn" id="confirmAddCashBtn">Add Funds</button>
+    </div>
+  </dialog>
+  
+  <!-- MODAL: CREATE SAVINGS PLAN -->
+  <dialog id="createPlanModal" closedby="any" aria-labelledby="createPlanTitle">
+    <div class="modal-header">
+      <h3 id="createPlanTitle">Create Savings Plan</h3>
+      <button class="close-modal-btn" onclick="document.getElementById('createPlanModal').close()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="form-group">
+      <label for="cpName">Goal Name</label>
+      <input type="text" id="cpName" class="form-control" placeholder="e.g. Rent, Tuition, Car" required>
+    </div>
+    <div class="form-group">
+      <label for="cpTarget">Target Amount (₦)</label>
+      <input type="number" id="cpTarget" class="form-control" placeholder="e.g. 500000" min="1000" required>
+    </div>
+    <div class="form-group">
+      <label for="cpType">Savings Class</label>
+      <select id="cpType" class="form-control">
+        <option value="regular">Regular Savings (Interest bearing - 11% p.a.)</option>
+        <option value="halal">Halal Savings (No interest, profit-share mode)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="cpDuration">Duration</label>
+      <select id="cpDuration" class="form-control">
+        <option value="3">3 Months</option>
+        <option value="6">6 Months</option>
+        <option value="12" selected>12 Months</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="action-btn secondary-btn" onclick="document.getElementById('createPlanModal').close()">Cancel</button>
+      <button class="action-btn" id="confirmCreatePlanBtn">Create Goal</button>
+    </div>
+  </dialog>
+  
+  <!-- MODAL: FUND SAVINGS PLAN -->
+  <dialog id="fundPlanModal" closedby="any" aria-labelledby="fundPlanTitle">
+    <div class="modal-header">
+      <h3 id="fundPlanTitle">Fund Saving Goal</h3>
+      <button class="close-modal-btn" onclick="document.getElementById('fundPlanModal').close()">
+        <svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <div class="form-group">
+      <label for="fpPlanName">Saving Goal</label>
+      <input type="text" id="fpPlanName" class="form-control" readonly>
+      <input type="hidden" id="fpPlanIndex">
+    </div>
+    <div class="form-group">
+      <label for="fpAmount">Amount to Save (₦)</label>
+      <input type="number" id="fpAmount" class="form-control" placeholder="e.g. 10000" min="100">
+    </div>
+    <div class="form-group">
+      <label for="fpSource">Funding Source</label>
+      <select id="fpSource" class="form-control">
+        <option value="wallet">Naira Balance Wallet (Available)</option>
+        <option value="stash">Cash Stash Balance</option>
+        <option value="card">Linked Card (**** 4242)</option>
+      </select>
+    </div>
+    <div class="modal-footer">
+      <button class="action-btn secondary-btn" onclick="document.getElementById('fundPlanModal').close()">Cancel</button>
+      <button class="action-btn" id="confirmFundPlanBtn">Fund Goal</button>
+    </div>
+  </dialog>
+  
+  <script src="dashboard.js"></script>
 </body>
 </html>
