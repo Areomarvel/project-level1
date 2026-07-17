@@ -254,7 +254,7 @@ input {
     </p>
 
 
-    <button class="google-btn">
+    <button onclick="signIn()" class="google-btn">
       <img src="https://cdn-icons-png.flaticon.com/512/281/281764.png">
       Sign up with Google
     </button>
@@ -297,4 +297,47 @@ input {
 
 </body>
 <script src="signup.js"></script>
+<script type="module">
+   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.15.0/firebase-app.js";
+   import { getAuth, GoogleAuthProvider, signInWithPopup} from "https://www.gstatic.com/firebasejs/12.15.0/firebase-auth.js";
+
+   // Import the functions you need from the SDKs you need
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyDCjL34AShU4nmYFcPmnKmNtonmJaq8Ezk",
+  authDomain: "cowrywise-b81a6.firebaseapp.com",
+  projectId: "cowrywise-b81a6",
+  storageBucket: "cowrywise-b81a6.firebasestorage.app",
+  messagingSenderId: "669360350776",
+  appId: "1:669360350776:web:9598b0078bb8bb7190a8cd"
+};
+
+// Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const signIn = () => {
+    signInWithPopup(auth, provider)
+    .then((result)=>{
+      const user = result.user;
+      console.log(user);
+      setTimeout(() => {
+        window.location.href = 'dashboard.html'
+      }, 2000);
+    })
+    .catch((error)=>{
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      console.log(errorCode);
+      console.log(errorMessage);
+      
+    })
+  }
+
+  window.signIn = signIn
+</script>
 </html>

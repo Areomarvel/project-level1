@@ -1,5 +1,14 @@
-// Cowrywise Dashboard Clone Logic
-// Centralized State
+
+const fetchInfo = () => {
+    if (!localStorage.currentUser) {
+        window.location.href = 'login.html';
+    } else {
+        setTimeout(() => {
+            document.getElementById('loader').style.display = 'none';
+            document.getElementById('apped').style.display = 'block';
+        }, 1000);
+    }
+}
 let state = {
   nairaBalance: 1000.00,
   stashBalance: 1000.00,
@@ -777,4 +786,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // First update calls
   updateUI();
+});
+
+//Onload Code
+window.addEventListener('DOMContentLoaded', () => {
+
+    fetchInfo();
+
 });

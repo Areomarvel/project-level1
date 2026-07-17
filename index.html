@@ -61,7 +61,7 @@
       </ul>
             <div class="signup nav-right me-5"  >
       <a target="_blank" href="login.html" class="login-btn">Log in</a>
-      <a target="_blank" href="signup.html" class="cta-btn">Sign up for free</a>
+      <a target="_blank" id="loader" onclick="load()" href="signup.html" class="cta-btn">Sign up for free</a>
     </div>
     </div>
 
@@ -453,9 +453,9 @@ Backed by results.</h1>
 
 </section>
 
-
-
-
+<div id="loader" style="display: none;">
+  <img src="loader.gif" alt="Loading...">
+</div>
 
 </body>
 </html>
@@ -465,4 +465,16 @@ Backed by results.</h1>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 </body>
+   <script>
+    const load = () => {
+        const loader = document.getElementById('loader');
+      if (loader) {
+        window.addEventListener("load", function () {
+    setTimeout(() => {
+       window.location.href = "loader";
+    }, 3000);
+});
+      }
+    }
+   </script>
 </html>
